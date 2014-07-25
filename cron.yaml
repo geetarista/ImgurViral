@@ -1,0 +1,8 @@
+---
+cron:
+  - description: poll imgur
+    url: /tasks/poll
+    schedule: every 1 minutes
+  - description: process tasks
+    url: /tasks/process
+    schedule: every 1 minutes

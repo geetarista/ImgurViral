@@ -1,0 +1,4 @@
+---
+queue:
+  - name: pull-queue
+    mode: pull
