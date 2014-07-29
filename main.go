@@ -96,7 +96,7 @@ func pollImgur(w http.ResponseWriter, r *http.Request) {
 		if _, err := memcache.Get(ctx, result.ID); err == memcache.ErrCacheMiss {
 			// not in cache--do nothing
 		} else if err != nil {
-			ctx.Errorf("error getting item: %v", err)
+			ctx.Errorf("error getting item with key %s: %v", result.ID, err)
 		} else {
 			break
 		}
