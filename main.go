@@ -142,6 +142,7 @@ func processTasks(w http.ResponseWriter, r *http.Request) {
 		item := &memcache.Item{
 			Key:        task.Name,
 			Expiration: 72 * time.Hour,
+			Value:      []byte(""),
 		}
 		if err := memcache.Add(ctx, item); err != memcache.ErrNotStored {
 			ctx.Errorf("error adding item: %v", err)
