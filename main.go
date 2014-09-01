@@ -90,7 +90,7 @@ func pollImgur(w http.ResponseWriter, r *http.Request) error {
 	req.Header.Add("Accept", "application/json")
 	req.Header.Set("Authorization", fmt.Sprintf("Client-ID %s", config.ImgurClientID))
 	client := &http.Client{
-	// Transport: &urlfetch.Transport{Context: ctx, Deadline: 10 * time.Second},
+		Transport: &urlfetch.Transport{Context: ctx, Deadline: 10 * time.Second},
 	}
 	res, err := client.Do(req)
 	if err != nil {
